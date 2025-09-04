@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+
+<head>
+
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Çağatay Yağız Uysal - Kişisel Website</title>
+    <meta name="description" content="Çağatay Yağız Uysal - Mühendislik, Veri Analitiği, Yenilenebilir Enerji" />
+    <style>
+        :root {
+            --bg: #0f1226;
+            --fg: #f5f7ff;
+            --muted: #cfd3ff;
+            --primary: #7c3aed;
+            --accent: #06b6d4;
+            --hot: #ef4444;
+            --card: #171a36;
+            --chip: #23264d;
+            --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+            --radius: 18px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+            background: radial-gradient(1200px 600px at 10% -10%, rgba(124, 58, 237, .25), transparent),
+                radial-gradient(800px 600px at 90% 10%, rgba(6, 182, 212, .25), transparent),
+                var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        header {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 var(--radius) var(--radius);
+            background:
+                linear-gradient(135deg, rgba(124, 58, 237, .6), rgba(6, 182, 212, .6)),
+                url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%221440%22 height=%24900%22><defs><linearGradient id=%22g%22 x1=%220%22 x2=%221%22 y1=%220%22 y2=%221%22><stop stop-color=%22%237c3aed%22 offset=%220%22/><stop stop-color=%2206b6d4%22 offset=%221%22/></linearGradient></defs><g fill=%22none%22 stroke=%22url(%23g)%22 stroke-opacity=%220.25%22><circle cx=%22720%22 cy=%22450%22 r=%22500%22/><circle cx=%22720%22 cy=%22450%22 r=%22400%22/><circle cx=%22720%22 cy=%22450%22 r=%22300%22/></g></svg>');
+            box-shadow: var(--shadow);
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 18px;
+            align-items: center;
+            padding: 42px 24px 40px;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #fff2;
+            overflow: hidden;
+            border: 3px solid #fff3;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, .25);
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .title {
+            font-size: clamp(24px, 4vw, 40px);
+            font-weight: 800;
+            letter-spacing: .3px;
+        }
+
+        .subtitle {
+            color: #eef;
+            font-size: 16px;
+            opacity: .9;
+            margin-top: 6px;
+        }
+
+        .links {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            margin-top: 14px;
+            flex-wrap: wrap;
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 14px;
+            border-radius: 999px;
+            background: #ffffff1a;
+            backdrop-filter: blur(6px);
+            border: 1px solid #ffffff2f;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, .15);
+            transition: transform .15s ease, background .2s ease;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .chip:hover {
+            transform: translateY(-1px);
+            background: #ffffff2a;
+        }
+
+        .icon {
+            width: 18px;
+            height: 18px;
+            display: inline-block;
+        }
+
+        .tooltip {
+            position: relative;
+        }
+
+        .tooltip:hover::after {
+            content: attr(data-tip);
+            position: absolute;
+            top: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--card);
+            border: 1px solid #ffffff2a;
+            color: var(--fg);
+            padding: 8px 10px;
+            border-radius: 8px;
+            white-space: nowrap;
+            box-shadow: var(--shadow);
+            font-size: 12px;
+        }
+
+        section {
+            margin-top: 28px;
+        }
+
+        h2 {
+            font-size: 20px;
+            letter-spacing: .4px;
+            margin: 0 0 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #ffffff12, #ffffff06);
+            border: 1px solid #ffffff1f;
+        }
+
+        .grid {
+            display: grid;
+            column-gap: 0px;
+            row-gap: 6px;
+            grid-template-columns: repeat(12, 1fr);
+        }
+
+        .col-12 {
+            grid-column: span 12;
+        }
+
+        .col-6 {
+            grid-column: span 6;
+        }
+
+        .col-4 {
+            grid-column: span 4;
+        }
+
+        @media (max-width: 800px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .links {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .col-6,
+            .col-4 {
+                grid-column: span 12;
+            }
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid #f3eded10;
+            border-radius: var(--radius);
+            padding: 18px;
+            box-shadow: var(--shadow);
+            color: #ffffff;
+        }
+
+        .meta {
+            color: var(--muted);
+            font-size: 13px;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .list {
+            margin: 0;
+            padding-left: 18px;
+            color: #ffffff;
+        }
+
+        .list li {
+            margin: 8px 0;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .pill {
+            background: var(--chip);
+            padding: 8px 12px;
+            border-radius: 999px;
+            border: 1px solid #ffffff10;
+            font-weight: 600;
+            font-size: 14px;
+            color: #ffffff;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+            padding: 28px 0 48px;
+        }
+
+        .cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 4px;
+            padding: 10px 16px;
+            border-radius: 12px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            color: white;
+            font-weight: 700;
+            border: 0;
+            cursor: pointer;
+            box-shadow: 0 10px 24px rgba(124, 58, 237, .35);
+        }
+        
+    </style>
+</head>
+
+<div id="bootstrap-navbar"></div>
+
+<script>
+  const navbarHost = document.getElementById("bootstrap-navbar");
+  const shadow = navbarHost.attachShadow({ mode: "open" });
+
+  shadow.innerHTML = `
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="Home.html">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+          data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" 
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link " href="İndex.html">Business</a></li>
+            <li class="nav-item"><a class="nav-link" href="personal.html">Personal</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  `;
+
+  // Bootstrap JS ekleme
+  const script = document.createElement("script");
+  script.src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js";
+  shadow.appendChild(script);
+</script>
+
+<body>
+    <header>
+        <div class="container hero">
+            <div class="avatar">
+                <img src="https://media.licdn.com/dms/image/v2/D4D03AQE9ym5MdZc6pg/profile-displayphoto-shrink_800_800/B4DZkJhGdUGgAc-/0/1756801298379?e=1759968000&v=beta&t=UjndDbOX5vAaslJ06OaJMIAAfVQZqe-3a88lsUUDdZ8"
+                    alt="Çağatay Yağız Uysal">
+            </div>
+            <div>
+                <div class="title">Çağatay Yağız Uysal</div>
+                <div class="subtitle"><a
+                        href="https://www.google.com/maps/place/Istanbul,+%C4%B0stanbul/@41.004852,28.6825331,84354m/data=!3m2!1e3!4b1!4m6!3m5!1s0x14caa7040068086b:0xe1ccfe98bc01b0d0!8m2!3d41.0082376!4d28.9783589!16zL20vMDk5NDlt?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D">İstanbul,
+                        Kadıköy, Türkiye</a></div>
+                <div class="links">
+                    <a class="chip"
+                        href="https://www.linkedin.com/in/%C3%A7a%C4%9Fatay-ya%C4%9F%C4%B1z-uysal-11a19515b/"
+                        target="_blank">LinkedIn</a>
+                    <span class="chip tooltip" data-tip="+90 (534) 760 2080">Telefon</span>
+                    <a class="chip tooltip" href="mailto:yagizuysal97@gmail.com"
+                        data-tip="yagizuysal97@gmail.com">E-posta</a>
+                    <button id="langToggle" class="chip">EN</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+      
+
+        <section>
+            <h2 data-key="experienceTitle">Deneyim</h2>
+            <div class="grid">
+                <a class="card col-12" data-key="entek" href="https://www.entekelektrik.com.tr/">
+                    <strong>Entek Elektrik – İstanbul, Türkiye</strong>
+                    <div class="meta">Senior Performance Engineer (Oca 2025 – Güncel) • Performance & Reliability
+                        Engineer (Kas 2021 – Oca 2025)</div>
+                    <ul class="list">
+                        <li>Varlık performans raporlarını hazırlama ve analiz etme; veriden içgörü üreterek verimlilik
+                            artışı sağlama.</li>
+                        <li>O&M anlaşmalarında veri destekli müzakere süreçlerine liderlik.</li>
+                        <li>Saha performansını izleme ve ünite erişilebilirliğini optimize etme.</li>
+                        <li>Denetimler ve değerlendirmelerle operasyonel güvenilirliği artırma.</li>
+                        <li>Yenilenebilir projelerde planlama ve kaynak koordinasyonu.</li>
+                    </ul>
+                </a>
+                <a class="card col-6" data-key="arcelik" href="https://www.arcelikglobal.com/">
+                    <strong>Arçelik Global – Bolu, Türkiye</strong>
+                    <div class="meta">Stajyer (Ağu 2021 – Eyl 2021)</div>
+                    <p>Ar-Ge’de tasarım bileşenleri üzerine katkı.</p>
+                </a>
+                <a class="card col-6" data-key="ecemtag" href="https://ecemtag.com/">
+                    <strong>Ecemtag Control Technologies – İstanbul, Türkiye</strong>
+                    <div class="meta">Yarı Zamanlı Kontrol Yazılım Mühendisi (Kas 2020 – Mar 2021) • Staj (Tem 2020 –
+                        Eyl 2020)</div>
+                    <ul class="list">
+                        <li>Yeni nesil zırhlı araç için iletim kontrol ünitesi geliştirme.</li>
+                        <li>MATLAB/Simulink ile birim testleri.</li>
+                    </ul>
+                </a>
+                <a class="card col-6" data-key="turkishAirlines" href="https://turkishtechnic.com/tr">
+                    <strong>Turkish Airlines Technic – İstanbul, Türkiye</strong>
+                    <div class="meta">Staj (Tem 2019 – Ağu 2019)</div>
+                    <p>Uçak bakım prosedürleri ve komponent test süreçleri yürütme.</p>
+                </a>
+                <div class="card col-6" data-key="solidworks">
+                    <strong>Solidworks Learning Assistant – İstanbul, Türkiye</strong>
+                    <div class="meta">Şub 2019 – Haz 2019</div>
+                    <p>20 kişiye CAD (Solidworks) eğitimi.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 data-key="educationTitle">Eğitim</h2>
+            <div class="grid">
+                <a class="card col-6" data-key="sabanci" href="https://www.sabanciuniv.edu/tr">
+                    <strong>Sabancı Üniversitesi</strong>
+                    <div class="meta">Mekatronik Mühendisliği (Lisans), Enerji Yan Dalı • 2016 – 2021 • İstanbul,
+                        Türkiye</div>
+                </a>
+                <a class="card col-6" data-key="maribor" href="https://www.um.si/en/home-page/">
+                    <strong>University of Maribor</strong>
+                    <div class="meta">Erasmus Programı • 2020 • Maribor, Slovenya</div>
+                </a>
+            </div>
+        </section>
+
+        <section>
+            <h2 data-key="skillsTitle">Beceriler</h2>
+            <div class="card">
+                <div class="skills">
+                    <span class="pill">Python (Veri Analizi)</span>
+                    <span class="pill">Power BI</span>
+                    <span class="pill">Power Automate</span>
+                    <span class="pill">Power Apps</span>
+                    <span class="pill">Excel</span>
+                    <span class="pill">Word</span>
+                    <span class="pill">PowerPoint</span>
+                    <span class="pill">Solidworks</span>
+                    <span class="pill">MATLAB / Simulink</span>
+                    <span class="pill" data-key="langTR">Türkçe (Anadil)</span>
+                    <span class="pill" data-key="langEN">İngilizce (İleri)</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 data-key="volunteerTitle">Gönüllülük & Liderlik</h2>
+            <div class="grid">
+                <a class="card col-4" data-key="lessonsNepal" href="https://aiesec.org/">
+                    <strong>Lessons for Nepal</strong>
+                    <div class="meta">Gönüllü Öğretmen • 2018 • Kathmandu, Nepal</div>
+                </a>
+                <a class="card col-4" data-key="workaway" href="https://www.workaway.info/">
+                    <strong>Workaway Projects</strong>
+                    <div class="meta">İnşaat & Kültürel Değişim • 2019 Fransa, 2020 Ürdün</div>
+                </a>
+                <a class="card col-4" data-key="outdoor" href="https://clubs.sabanciuniv.edu/node/65">
+                    <strong>Outdoor Sports Club</strong>
+                    <div class="meta">Yönetim Kurulu Üyesi • 2018 – 2021</div>
+                </a>
+                <a class="card col-12" data-key="basketball"
+                    href="https://corporateleagues.com/oyuncular.php?oyuncuID=27916">
+                    <strong>Corporate Basketball League</strong>
+                    <div class="meta">Koç Holding Takımı • 2024 – 2025</div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div>© <span id="yil"></span> Çağatay Yağız Uysal • Tüm hakları saklıdır.</div>
+        <button class="cta" onclick="window.location.href='mailto:yagizuysal97@gmail.com'"
+            data-key="contactBtn">İletişime Geç</button>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                aboutTitle: "About",
+                aboutContent: "I am Mechatronics engineer with Energy minor and extensive experience in the renewable energy sector, focusing on asset performance management, energy audits, and renewable energy project planning. My work includes optimizing power plant performance, analyzing operational data, and managing key negotiations for O&M agreements and supply contracts to drive efficiency and sustainability. I am skilled in Excel, SQL and other analytical tools, with a strong interest in integrating coding into energy solutions. My goal is to leverage these technologies to deliver innovative approaches to the challenges facing the renewable energy industry. Beyond my technical work, I enjoy contributing to team environments, including playing basketball as part of my company’s team. I am always excited to connect with professionals who share an interest in renewable energy, data-driven solutions, and sustainability.",
+                experienceTitle: "Experience",
+                entek: `
+          <strong>Entek Electricity – Istanbul, Turkey</strong>
+          <div class="meta">Senior Performance Engineer (Jan 2025 – Present) • Performance & Reliability Engineer (Nov 2021 – Jan 2025)</div>
+          <ul class="list">
+            <li>Prepare and analyze asset performance reports, generating insights to increase efficiency.</li>
+            <li>Lead data-driven negotiations in O&M agreements.</li>
+            <li>Monitor field performance and optimize unit availability.</li>
+            <li>Enhance operational reliability through audits and assessments.</li>
+            <li>Planning and resource coordination in renewable projects.</li>
+          </ul>`,
+                arcelik: `<strong>Arçelik Global – Bolu, Turkey</strong><div class="meta">Intern (Aug 2021 – Sep 2021)</div><p>Contributed to design components in R&D.</p>`,
+                ecemtag: `<strong>Ecemtag Control Technologies – Istanbul, Turkey</strong><div class="meta">Part-Time Control Software Engineer (Nov 2020 – Mar 2021) • Intern (Jul 2020 – Sep 2020)</div><ul class="list"><li>Developed transmission control unit for next-gen armored vehicle.</li><li>Unit testing with MATLAB/Simulink.</li></ul>`,
+                turkishAirlines: `<strong>Turkish Airlines Technic – Istanbul, Turkey</strong><div class="meta">Intern (Jul 2019 – Aug 2019)</div><p> Operating aircraft maintenance procedures and component testing processes.</p>`,
+                solidworks: `<strong>Solidworks Learning Assistant – Istanbul, Turkey</strong><div class="meta">Feb 2019 – Jun 2019</div><p>Provided CAD (Solidworks) training to 20 people.</p>`,
+                educationTitle: "Education",
+                sabanci: `<strong>Sabancı University</strong><div class="meta">Mechatronics Engineering (Bachelor), Energy Minor • 2016 – 2021 • Istanbul, Turkey</div>`,
+                maribor: `<strong>University of Maribor</strong><div class="meta">Erasmus Program • 2020 • Maribor, Slovenia</div>`,
+                skillsTitle: "Skills",
+                langTR: "Turkish (Native)",
+                langEN: "English (Advanced)",
+                volunteerTitle: "Volunteering & Leadership",
+                lessonsNepal: `<strong>Lessons for Nepal</strong><div class="meta">Volunteer Teacher • 2018 • Kathmandu, Nepal</div>`,
+                workaway: `<strong>Workaway Projects</strong><div class="meta">Construction & Cultural Exchange • 2019 France, 2020 Jordan</div>`,
+                outdoor: `<strong>Outdoor Sports Club</strong><div class="meta">Board Member • 2018 – 2021</div>`,
+                basketball: `<strong>Corporate Basketball League</strong><div class="meta">Koç Holding Team • 2024 – 2025</div>`,
+                contactBtn: "Contact Me"
+            },
+            tr: {
+                aboutTitle: "Hakkımda",
+                aboutContent: "  Ben, Enerji Yan Dalı yapmış bir Mekatronik Mühendisiyim ve yenilenebilir enerji sektöründe geniş deneyime sahibim; özellikle varlık performans yönetimi, enerji denetimleri ve yenilenebilir enerji proje planlaması üzerine odaklanıyorum. Çalışmalarım arasında enerji santrallerinin performansını optimize etmek, operasyonel verileri analiz etmek ve O&M anlaşmaları ile tedarik sözleşeleri için verimlilik ve sürdürülebilirlik odaklı kritik müzakereleri yönetmek bulunmaktadır. Excel, SQL ve diğer analitik araçlarda yetkinim ve kodlamayı enerji çözümlerine entegre etme konusunda güçlü bir ilgim var. Amacım, bu teknolojileri kullanarak yenilenebilir enerji sektörünün karşılaştığı zorluklara yenilikçi çözümler sunmaktır.Teknik çalışmalarımın yanı sıra, takım ortamlarına katkıda bulunmayı seviyorum; şirketimin basketbol takımında oynamak da bunlardan biri. Yenilenebilir enerji, veri odaklı çözümler ve sürdürülebilirlik konularına ilgi duyan profesyonellerle bağlantı kurmaktan her zaman heyecan duyuyorum.",
+
+                experienceTitle: "Deneyim",
+                entek: `
+    <strong>Entek Elektrik – İstanbul, Türkiye</strong>
+    <div class="meta">Kıdemli Performans Mühendisi (Oca 2025 – Devam) • Performans & Güvenilirlik Mühendisi (Kas 2021 – Oca 2025)</div>
+    <ul class="list">
+      <li>Varlık performans raporlarını hazırlama ve analiz etme, verimliliği artıracak içgörüler üretme.</li>
+      <li>O&M anlaşmalarında veri odaklı müzakerelere liderlik etme.</li>
+      <li>Saha performansını izleme ve ünite kullanılabilirliğini optimize etme.</li>
+      <li>Denetim ve değerlendirmelerle operasyonel güvenilirliği artırma.</li>
+      <li>Yenilenebilir projelerde planlama ve kaynak koordinasyonu.</li>
+    </ul>`,
+
+                arcelik: `<strong>Arçelik Global – Bolu, Türkiye</strong><div class="meta">Stajyer (Ağu 2021 – Eyl 2021)</div><p>Ar-Ge’de tasarım bileşenlerine katkıda bulundu.</p>`,
+
+                ecemtag: `<strong>Ecemtag Kontrol Teknolojileri – İstanbul, Türkiye</strong><div class="meta">Yarı Zamanlı Kontrol Yazılım Mühendisi (Kas 2020 – Mar 2021) • Stajyer (Tem 2020 – Eyl 2020)</div><ul class="list"><li>Yeni nesil zırhlı araç için şanzıman kontrol ünitesi geliştirdi.</li><li>MATLAB/Simulink ile birim testleri gerçekleştirdi.</li></ul>`,
+
+                turkishAirlines: `<strong>Türk Hava Yolları Teknik – İstanbul, Türkiye</strong><div class="meta">Stajyer (Tem 2019 – Ağu 2019)</div><p>Uçak bakım prosedürlerini ve bileşen test süreçleri yürütme.</p>`,
+
+                solidworks: `<strong>Solidworks Öğrenim Asistanı – İstanbul, Türkiye</strong><div class="meta">Şub 2019 – Haz 2019</div><p>20 kişiye CAD (Solidworks) eğitimi verdi.</p>`,
+
+                educationTitle: "Eğitim",
+                sabanci: `<strong>Sabancı Üniversitesi</strong><div class="meta">Mekatronik Mühendisliği (Lisans), Enerji Yandalı • 2016 – 2021 • İstanbul, Türkiye</div>`,
+                maribor: `<strong>Maribor Üniversitesi</strong><div class="meta">Erasmus Programı • 2020 • Maribor, Slovenya</div>`,
+
+                skillsTitle: "Yetenekler",
+                langTR: "Türkçe (Ana Dil)",
+                langEN: "İngilizce (İleri)",
+
+                volunteerTitle: "Gönüllülük & Liderlik",
+                lessonsNepal: `<strong>Lessons for Nepal</strong><div class="meta">Gönüllü Öğretmen • 2018 • Katmandu, Nepal</div>`,
+                workaway: `<strong>Workaway Projeleri</strong><div class="meta">İnşaat & Kültürel Değişim • 2019 Fransa, 2020 Ürdün</div>`,
+                outdoor: `<strong>Açık Hava Sporları Kulübü</strong><div class="meta">Yönetim Kurulu Üyesi • 2018 – 2021</div>`,
+                basketball: `<strong>Kurumsal Basketbol Ligi</strong><div class="meta">Koç Holding Takımı • 2024 – 2025</div>`,
+
+                contactBtn: "Bana Ulaş"
+            } // boş, çünkü varsayılan içerik Türkçe
+        };
+
+        let currentLang = 'tr';
+        document.getElementById('langToggle').addEventListener('click', () => {
+            currentLang = currentLang === 'tr' ? 'en' : 'tr';
+            document.getElementById('langToggle').textContent = currentLang === 'tr' ? 'EN' : 'TR';
+
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (translations[currentLang][key]) {
+                    el.innerHTML = translations[currentLang][key];
+                } else if (currentLang === 'tr') {
+                    el.innerHTML = el.getAttribute('data-tr') || el.innerHTML;
+                }
+            });
+
+            document.documentElement.lang = currentLang;
+        });
+
+        document.getElementById('yil').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

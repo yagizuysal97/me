@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hobilerim ve Seyahatlerim</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+  .custom-navbar {
+    background-color:  #0d0033; /* arka plan rengi */
+  }
+  .custom-navbar .navbar-brand,
+  .custom-navbar .nav-link {
+    color: #ffffff; /* yazı rengi */
+  }
+  .custom-navbar .nav-link:hover {
+    color:  #ffffff93; /* hover rengi */
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg custom-navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="Home.html">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+      data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" 
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+       
+        <li class="nav-item"><a class="nav-link" href="İndex.html">Business</a></li>
+         <li class="nav-item"><a class="nav-link" href="personal.html">Personal</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<body class="bg-dark text-light">
+
+    <!-- Header -->
+    <header class="text-center p-4 text-white fw-bold" style="background: linear-gradient(90deg, #7c3aed, #06b6d4);">
+        Personal
+    </header>
+
+    <main class="container px-5 my-5 ">
+
+        <!-- Travels -->
+        <section class="mb-5">
+            <h2 class="fs-4 border-bottom border-2 pb-2 d-inline-block " style="border-color:#7c3aed !important;">My
+                Travels</h2>
+            <p class="mt-2">
+                I have traveled to 30 different countries for both work and volunteer purposes. These journeys allowed
+                me to
+                experience diverse cultures, meet new people, and broaden my professional and personal perspective.
+            </p>
+            <div class="ratio ratio-16x9 shadow rounded">
+                <iframe
+                    src="https://www.google.com/maps/d/embed?mid=1QffbqaYcb_2lTmjhv30KdDUWdWnLHxw&ehbc=2E312F&noprof=1"
+                    allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Hobbies -->
+        <section>
+            <h2 class="fs-4 border-bottom border-2 pb-2 d-inline-block" style="border-color:#7c3aed !important;">Hobbies
+            </h2>
+
+            <div class="row g-5 justify-content-center">
+                <div class="col-12 col-md-8">
+                    <div class="card h-100 bg-dark text-light shadow rounded-4 my-2">
+                        <img src="basketbol.jpg" class="card-img-top rounded-top-4 img-fluid my-2 d-block mx-auto" alt="Basketbol" style="max-height:350px; object-fit:cover;">
+                        <div class="card-body">
+                            <h5 class="card-title text-info">Basketball</h5>
+                            <p class="card-text">I have been playing basketball for many years and also participate
+                                in official matches with my company team.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-8">
+                    <div class="card h-100 bg-dark text-light shadow rounded-4 my-2">
+                        <img src="dogayuruyusu.jpg" class="card-img-top rounded-top-4 img-fluid my-2 d-block mx-auto" alt="Doğa Yürüyüşü">
+                        <div class="card-body">
+                            <h5 class="card-title text-info">Hiking</h5>
+                            <p class="card-text">I enjoy being close to nature, and especially mountain hikes
+                                give me energy.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-8">
+                    <div class="card h-100 bg-dark text-light shadow rounded-4 my-2">
+                        <img src="marangozluk.jpg" class="card-img-top rounded-top-4" alt="Marangozluk">
+                        <div class="card-body">
+                            <h5 class="card-title text-info">Woodworking</h5>
+                            <p class="card-text">In my free time, I do small woodworking projects and try to
+                                design my own furniture.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        
+        </section>
+
+
+
+
+
+
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center text-secondary py-3 small">
+        © 2025 Çağatay Yağız Uysal
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

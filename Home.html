@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kişisel Website</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <style>
+    header {
+      background: linear-gradient(to right, #0d0033, #7c3aed);
+      color: white;
+      padding: 50px 0;
+      width: 100%;
+      min-height: 400px;
+    }
+
+    body {
+      background: linear-gradient(135deg, #7c3aed #1a73e8);
+    }
+
+    .custom-navbar {
+      background-color: #0d0033;
+    }
+
+    .custom-navbar .navbar-brand,
+    .custom-navbar .nav-link {
+      color: #fff;
+    }
+
+    .custom-navbar .nav-link:hover {
+      color: #ffffffa8;
+    }
+
+    .avatar img {
+      border-radius: 50%;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      border: 5px solid #fff;
+    }
+
+    .card {
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .btn {
+      border-radius: 30px;
+      padding: 8px 18px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+
+  <nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="Home.html">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ">
+          <li class="nav-item"><a class="nav-link" href="İndex.html">Business</a></li>
+          <li class="nav-item"><a class="nav-link" href="personal.html">Personal</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Header -->
+  <header>
+
+    <div class="container hero d-flex flex-column align-items-center text-center py-5">
+      <div class="avatar mb-4">
+        <img
+          src="https://media.licdn.com/dms/image/v2/D4D03AQE9ym5MdZc6pg/profile-displayphoto-shrink_800_800/B4DZkJhGdUGgAc-/0/1756801298379?e=1759968000&v=beta&t=UjndDbOX5vAaslJ06OaJMIAAfVQZqe-3a88lsUUDdZ8"
+          alt="Çağatay Yağız Uysal" style="width:300px; height:300px;" class="img-thumbnail">
+      </div>
+
+      <div class="card text-center mb-3" style="max-width: 400px; width: 100%;">
+        <div class="card-body">
+          <h5 class="card-title">Çağatay Yağız Uysal</h5>
+          <p class="card-text">
+            <a href="https://www.google.com/maps/place/Istanbul,+%C4%B0stanbul" target="_blank"
+              class="text-decoration-none">
+              İstanbul, Kadıköy, Türkiye
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Buttons row -->
+      <div class="d-flex gap-2 mt-2">
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/%C3%A7a%C4%9Fatay-ya%C4%9F%C4%B1z-uysal-11a19515b/" target="_blank"
+          class="btn btn-primary">
+          <i class="bi bi-linkedin"></i> LinkedIn
+        </a>
+
+        <!-- Mail -->
+        <a href="mailto:yagizuysal97@gmail.com" class="btn btn-danger">
+          <i class="bi bi-envelope-fill"></i> Mail
+        </a>
+
+        <!-- Phone -->
+        <button type="button" class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="top"
+          data-bs-title="+90 534 760 20 80">
+          <i class="bi bi-telephone-fill"></i> Phone
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <main class="container my-5">
+    <section>
+      <h2 data-key="aboutTitle" class="mb-3">Hakkımda</h2>
+      <div class="card p-3 " data-key="aboutContent">
+        Ben, Enerji Yan Dalı yapmış bir Mekatronik Mühendisiyim ve yenilenebilir enerji sektöründe edindiğim deneyim
+        ile hem teknik hem analitik yeteneklerimi birleştirerek projelere değer katmayı hedefliyorum. Kariyerim boyunca,
+        enerji santrallerinin performansını optimize etmek, operasyonel verileri analiz etmek ve sürdürülebilirlik
+        odaklı çözümler geliştirmek üzerine çalıştım. Özellikle varlık performans yönetimi, enerji denetimleri ve yenilenebilir
+        enerji proje planlaması konularında kapsamlı tecrübeye sahibim.<br> <br>
+
+        Profesyonel çalışmalarımın yanı sıra, O&M anlaşmaları ve tedarik sözleşmeleri için yürüttüğüm kritik
+        müzakereler, verimlilik ve sürdürülebilirlik odaklı yaklaşımımın bir yansımasıdır. Excel, SQL ve diğer analitik araçlarda yetkinliğim,
+        kodlama ve veri analitiğini enerji çözümlerine entegre etme tutkum ile birleşerek, yenilenebilir enerji sektörünün karşılaştığı
+        sorunlara yenilikçi çözümler sunmamı sağlıyor.<br> <br>
+
+        Ancak iş, hayatın yalnızca bir parçası. Doğa ve seyahat tutkusu benim için vazgeçilmez; yeni yerler görmek,
+        farklı kültürleri deneyimlemek ve doğada zaman geçirmek enerjimi tazeliyor. Aynı zamanda basketbol oynayarak hem fiziksel
+        aktiviteyi hayatıma katıyor hem de takım ruhunu ve iş birliği becerilerimi güçlendiriyorum. Ahşap işçiliği ve küçük marangozluk
+        projeleri ile yaratıcılığımı farklı alanlarda da ifade etmeyi seviyorum.<br> <br>
+
+        Kariyerimde olduğu kadar kişisel yaşamımda da veriye, teknolojiye ve sürdürülebilir çözümlere olan ilgim devam
+        ediyor. Hem profesyonel hem de kişisel olarak, yenilenebilir enerji ve sürdürülebilirlik konularına tutkuyla yaklaşan
+        insanlarla bağlantı kurmak, fikir paylaşmak ve birlikte öğrenmek beni motive ediyor. Amacım, sahip olduğum bilgi ve
+        becerileri hem iş dünyasında hem de kişisel projelerde yaratıcı ve değerli bir şekilde kullanmak.
+      </div>
+    </section>
+
+    <section>
+      <h2 data-key="aboutTitle" class="mb-3 mt-5">About</h2>
+      <div class="card p-3" data-key="aboutContent">
+        I am a Mechatronics Engineer with a specialization in Energy and have gained extensive experience
+        in the renewable energy sector, combining technical and analytical skills to deliver value to projects.
+        Throughout my career, I have focused on asset performance management, energy audits, and renewable
+        energy project planning, working to optimize power plant performance, analyze operational data,
+        and develop sustainability-focused solutions.<br> <br>
+
+        Beyond technical work, I have managed critical negotiations for O&M agreements and supply contracts,
+        emphasizing efficiency and sustainability. My proficiency in Excel, SQL, and other analytical tools,
+        combined with a strong interest in integrating coding and data into energy solutions, enables me to
+        tackle the challenges of the renewable energy sector with innovative approaches.<br> <br>
+
+        Outside of work, I am passionate about nature and travel, enjoying discovering new places, exploring
+        different cultures, and spending time outdoors to recharge. I also play basketball, which helps me
+        stay active while strengthening teamwork and collaboration skills. Additionally, I enjoy woodworking
+        and small carpentry projects, expressing creativity in hands-on ways.<br> <br>
+
+        Both professionally and personally, I am motivated by technology, data-driven solutions, and sustainability.
+        I enjoy connecting with people who share an interest in renewable energy and sustainability, exchanging ideas,
+        and learning together. My goal is to leverage my knowledge and skills creatively and meaningfully in both
+        my professional and personal endeavors.
+      </div>
+    </section>
+  </main>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Tooltip init
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(el => new bootstrap.Tooltip(el))
+  </script>
+</body>
+
+<footer class="bg-dark text-white py-3 mt-3">
+  <div class="container d-flex flex-column flex-md-row justify-content-center align-items-center text-center">
+    <!-- Copyright -->
+    <div class="mb-2 mb-md-0 text-center">
+      © <span id="yil"></span> Çağatay Yağız Uysal 
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Set current year
+  document.getElementById("yil").innerText = new Date().getFullYear();
+</script>
+
+</html>
